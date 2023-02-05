@@ -1,0 +1,9 @@
+x=xlsread('som_dataset.csv','A2:C243');
+x=x';
+net = selforgmap([3 1]);
+ini_bobot=net.IW;
+training=train(net,x);
+has_bobot=training.IW;
+y=training(x);
+classes = vec2ind(y);
+classes = classes';

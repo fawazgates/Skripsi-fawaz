@@ -1,0 +1,23 @@
+fuzzy cmean
+yaitu pengelompokkan dengan yang sama.
+langkah :
+dataset(angka)(tidak lengkapi tabel kelas)
+function matlab
+jenis_ikan, tahun, produksi, cluster menjadi 3 (tinggi(3), sedang(2), rendah(1))
+melakukan training, hasil training centroid atau titik tengah dari masing-masing variable(cluster)
+variable 3 dan cluster 3 maka akan hasil 3x3 matrik centroid
+baris = cluster
+colom = variable
+hasil centroid digunakan untuk mengcluster, kelompok euclidean distance
+
+mencari eucludian distence lalu dicari yang minimum
+jadi di matlab untuk mengcluster nanti hasil clusternya berupa centroid
+
+x=xlsread('som_dataset.csv','A2:C243');
+x=x';
+net = selforgmap([3 1]);
+ini_bobot=net.IW;
+training=train(net,x);
+has_bobot=training.IW;
+y=training(x);
+classes = vec2ind(y);
